@@ -2,7 +2,7 @@ module github.com/manent-deployer/manent-plugin-ansible
 
 go 1.27.2
 
-require github.com/manent-deployer/manent v0.0.0-20261024075434-6c7a06415f72
+require github.com/manent-deployer/manent v0.0.0-20261024150640-79c369a75687
 
 require (
 	github.com/fatih/color v1.18.0 // indirect

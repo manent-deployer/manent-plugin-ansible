@@ -19,5 +19,9 @@ jobs:
           go-version-file: go.mod
       - run: make lint
       - run: go mod tidy -diff
-      - run: go test -count=1 ./...
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install ansible-core==2.21.5 && ansible-galaxy collection install -p "$RUNNER_TEMP/collections" ansible.posix
+      - run: MANENT_TEST_ANSIBLE="$(command -v ansible-playbook)" MANENT_TEST_ANSIBLE_COLLECTIONS="$RUNNER_TEMP/collections" go test -count=1 ./...
       - run: make build

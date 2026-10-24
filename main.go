@@ -4,9 +4,10 @@
 //	plugins:
 //	  ansible:
 //	    external:
-//	      command: /opt/manent/plugins/manent-plugin-ansible
+//	      command: /usr/local/bin/manent-plugin-ansible
 //	      sha256: "<sha256 of the binary>"
 //	    artifact_types: [ansible]
+//	    queue: ansible   # served by the workers with dbos.plugins: [ansible]
 package main
 
 import (
